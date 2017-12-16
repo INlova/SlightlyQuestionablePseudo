@@ -1,0 +1,183 @@
+echo "# SlightlyQuestionablePseudo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:INlova/SlightlyQuestionablePseudo.git
+git push -u origin master
+
+
+
+
+11:00am - MN + JE
+
+1 If string starts with a VOWEL of (‘a’,’e’,’i’,’o’,’u’)
+	 3.then simply add 'way' to the end of string AND return the .substr() string
+3else
+	Split() string AND push() all first consonants (any combo of bcdfghjklmnpqrstvwxyz) & first consonants of (BCDFGHJKLMNPQRSTVWXYZ) to the end of string UNTIL the string begins with a VOWEL ('a','e','i','o','u') 
+
+       and then 
+		4 add 'ay' to the end of string
+
+	 And finally, return
+		5.  Trimmed string + 'ay' .join() them together
+
+Tools we are allowed to use: → 
+____________________________________________________________________________
+Array.prototype.indexOf():  The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+Array.prototype.push(): The push() method adds one or more elements to the end of an array and returns the new length of the array.
+Array.prototype.join():  The join() method joins all elements of an array (or an array-like object) into a string and returns this string.
+String.prototype.substr(): The substr() method returns the characters in a string beginning at the specified location through the specified number of characters. 
+String.prototype.split(): The split() method splits a String object into an array of strings by separating the string into substrings, using a specified separator string to determine where to make each split.
+____________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MN - Problem Outline
+Challenge =  
+Pig Latin
+
+Translate the provided string to pig latin.
+Pig Latin takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an "ay".
+If a word begins with a vowel you just add "way" to the end.
+Input strings are guaranteed to be English words in all lowercase.
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+Here are some helpful links:
+Array.prototype.indexOf()
+Array.prototype.push()
+Array.prototype.join()
+String.prototype.substr()
+String.prototype.split()
+Checksum=
+translatePigLatin("california") should return "aliforniacay".
+translatePigLatin("paragraphs") should return "aragraphspay".
+translatePigLatin("glove") should return "oveglay".
+translatePigLatin("algorithm") should return "algorithmway".
+translatePigLatin("eight") should return "eightway".
+
+
+
+
+
+Pseudo code examples - “It helps to think about problems before you start coding. We are teaching you how to think programmatically. Not simply to code.” = 
+// input - string of characters "a-z" no special characters, no wrap around "z to a".  In this situation, case is not important
+//output - 'undefined' if no character is missing, or the missing character will be returned.  also, same items as above  
+// example: input "abce" Output: 'd'
+//1 first character = 'a'
+// 2 check if next letter is in alphabet
+//      3check if another letter available
+//          4Go to the next letter and repeat step 2.
+//5 (else)
+//      6 return undefined 
+//7 else
+//  8 return expected character
+//input - string of character"a-z"
+//output - undefined |or| the missing letter
+// single possible missing charater
+//no special chararters
+//no wrap around 'a to z'
+//a! = A - false for computer
+//case not important
+
+// Example:
+// input - "abce"
+// output - "d"
+// 1. First character of input
+// 2. Check if next letter is next in alphabet
+//       3. Check if another letter available
+//        4. Go to next letter and repeat step 2
+//    5. else
+//      6. Return undefined
+// 7. else
+//       8. return expected character 
+Input - String of characters “a-z” no special chars, no wrap around ‘z to a’, case not important
+output  - undefined if no character is missing || the missing character. Same items as above. Single possible missing character.
+
+Example:
+Input: “bcdf”  Output: “e”
+
+
+
+
+1 First character = first character of input
+2 Check if next letter is next in alphabet.
+	3 Check if another letter available
+		4 Go to next letter and repeat step 2
+	 5 else
+		6 Return undefined
+7 else
+	8 Return expected character
+
+
+Inferences - what can we say about the coding ruleset based on the instructions in front of us which is NOT explicitly stated in the prompt?
+
+“It helps to think about problems before you start coding. We are teaching you how to think programmatically. Not simply to code.” 
+
+----pseudo code below----
+01836HRS - MN
+1 If string starts with a VOWEL ('a','e','i','o','u') 
+	2 then simply add 'way' to the end of string AND return the string
+		
+3else
+	Trim string AND move all consonants (any combo of bcdfghjklmnpqrstvwxyz) to the end of string UNTIL the string begins with a VOWEL ('a','e','i','o','u') 
+
+       and then 
+		4 add 'ay' to the end of string
+
+	 And finally, return
+		5.  Trimmed string + 'ay'
+
+What have we used before that can help inform us how to tackle the challenge? 
+.join - can take the array we create and get back to STRING!
+.push - adds an element to an array, returns a whole array
+.shift - removes the first element from an array AND *returns that element
+Hi Jabier, just my 2c on the psuedo-code idea - how would you do it, what do you think? Working at a Harvard dorm until 12am - may be abe to login once more during this shift- let me know your thoughts! - Mike
+Inputs /  Outputs
+
+Input: a string, no special chars, case not important
+Output: If string[0] (first character) is a vowel, then add ‘way’ and return the concat string
+If string doesn’t start with a vowel, add the consonants to the end of the string until it does, then add ‘ay’. Return concat string.
+
+translatePigLatin("california") should return "aliforniacay".
+translatePigLatin("paragraphs") should return "aragraphspay".
+translatePigLatin("glove") should return "oveglay".
+translatePigLatin("algorithm") should return "algorithmway".
+translatePigLatin("eight") should return "eightway"
+
+JE
+function translatePigLatin(str) {
+  return str;
+  
+}
+
+translatePigLatin("consonant");
+//take first consonant or consonant cluster(aeiou) of an english word
+//add way to the end if the word begins with a vowel
+//all words must be lower case
+//
