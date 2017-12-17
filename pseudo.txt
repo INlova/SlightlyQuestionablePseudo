@@ -8,7 +8,7 @@ git push -u origin master
 
 
 
-11:00am - MN + JE
+11:00am - MN + JE hmm
 
 1 If string starts with a VOWEL of (‘a’,’e’,’i’,’o’,’u’)
 	 3.then simply add 'way' to the end of string AND return the .substr() string
